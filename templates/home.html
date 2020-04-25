@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1> home page</h1>
+    {% for post in posts %}
+        <table style="width:60%">
+        {% for subject, value in post.items() %}
+            <tr>
+               <td> {{subject}}</td>
+                <td> {{value}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <br>
+    {% endfor %}
+    <form action="{{url_for('tasks')}}">
+        <button> Tasks Page </button>
+    </form>
+{% endblock %}

@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block body %}
+{% block content %}
 <style>
 table {
   border-collapse: collapse;
@@ -32,10 +32,17 @@ table, th, td {
 <p1><br><br></p1>
 
 <p1>add a task</p1>
-<form action="/add_task" method="POST">
+<form action="{{url_for('add_task')}}" method="POST">
     <input name="task_index" type="text" placeholder="row number">
     <input name="name" type="text" placeholder="name">
     <input name="email" type="text" placeholder="email">
     <input type="submit">
 </form>
+<p1><br><br></p1>
+<form action="{{url_for('create_account')}}">
+<button type="submit">
+    create account
+</button>
+</form>
+
 {% endblock %}
