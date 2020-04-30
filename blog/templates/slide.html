@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% for task in tasks.items %}
+      <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile pictures/default.jpg') }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ task.author.username }}</a>
+            </div>
+            <p class="article-content">{{ task.content }}</p>
+          </div>
+          <div>
+              <a href="{{url_for('edit_task', task_id=task.id )}}">edit task</a>
+          </div>
+        </article>
+    {% endfor %}
+{% for page_num in tasks.iter_pages() %}
+    {% if page_num %}
+        {% if page_num == tasks.page %}
+            <a class="btn btn-info md-4" href="{{ url_for('slide',page=page_num) }}"> {{page_num }}</a>
+        {% else %}
+            <a class="btn btn-outline-info md-3" href="{{ url_for('slide',page=page_num) }}"> {{page_num }}</a>
+        {% endif %}
+    {% else %}
+        ...
+    {% endif %}
+{% endfor %}
+{% endblock %}
