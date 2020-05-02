@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, IntegerField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from blog.models import User
 # very cool, define your own form objects
@@ -41,7 +41,13 @@ class PostForm(FlaskForm):
 class TaskForm(FlaskForm):
     # notice that you don't include things like the ID or something like that
     content = StringField('new task', validators=[DataRequired()])
+    order = IntegerField('task order', validators=[DataRequired()])
     submit = SubmitField('Add Task!')
-    # add due date as an optional field
 
+class TaskListForm(FlaskForm):
+    name = StringField('List Name', validators=[DataRequired()])
+    description = StringField('description', validators=[DataRequired()])
+    submit = SubmitField('Create List!')
     #add a feature so that you can insert a new task anywhere in the list
+
+

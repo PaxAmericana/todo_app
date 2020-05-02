@@ -6,7 +6,7 @@
           <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile pictures/default.jpg') }}">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="#">{{ task.author.username }}</a>
+              <a class="mr-2" href="#">{{ task.TaskList.author.username }}</a>
             </div>
             <p class="article-content">{{ task.content }}</p>
           </div>
@@ -18,9 +18,9 @@
 {% for page_num in tasks.iter_pages() %}
     {% if page_num %}
         {% if page_num == tasks.page %}
-            <a class="btn btn-info md-4" href="{{ url_for('slide',page=page_num) }}"> {{page_num }}</a>
+            <a class="btn btn-info md-4" href="{{ url_for('slide',task_list_id=task_list_id, page=page_num) }}"> {{page_num }}</a>
         {% else %}
-            <a class="btn btn-outline-info md-3" href="{{ url_for('slide',page=page_num) }}"> {{page_num }}</a>
+            <a class="btn btn-outline-info md-3" href="{{ url_for('slide',task_list_id=task_list_id,page=page_num) }}"> {{page_num }}</a>
         {% endif %}
     {% else %}
         ...

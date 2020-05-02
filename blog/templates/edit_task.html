@@ -16,8 +16,15 @@
                     {% endfor %}
                 </div>
                 {% else %}
-                {{ form.content(class="form-control form-control-lg") }}
+                     {{ form.content(class="form-control form-control-lg") }}
                 {% endif %}
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <div class="form-group">
+                {{ form.order.label(class="form-control-label") }}
+                {{ form.order(required=False,class="form-control form-control-lg", placeholder=task_count+1) }}
             </div>
         </fieldset>
         <div class="form-group">

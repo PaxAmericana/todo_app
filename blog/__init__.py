@@ -14,3 +14,10 @@ login_manager = LoginManager(app)
 
 # do this at the bottom to avoid circular imports
 from blog import routes
+
+# trying to delete the one table
+# from sqlalchemy import create_engine
+# engine = create_engine('sqlite:///site.db', echo=False)
+#
+# from blog.models import Task
+# Task.__table__.drop(engine)

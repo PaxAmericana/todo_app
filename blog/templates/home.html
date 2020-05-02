@@ -15,9 +15,7 @@
     </div>
 </article>
 {% endfor %}
-<form action="{{url_for('tasks')}}">
-    <button> Tasks Page </button>
-</form>
+
 {% for page_num in posts.iter_pages(left_edge=1, right_edge=1) %}
     {% if page_num %}
         {% if page_num == posts.page %}

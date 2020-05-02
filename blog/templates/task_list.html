@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!--<style>-->
+<!--table {-->
+<!--  border-collapse: collapse;-->
+<!--  width: 50%-->
+<!--}-->
+<!--th {-->
+<!--    font-size: 24px;-->
+<!--}-->
+<!--table, th, td {-->
+<!--  border: 1px solid black;-->
+<!--  padding: 15px;-->
+<!--}-->
+<!--</style>-->
+
+<h1>{{current_user.username}}'s Task List</h1>
+</table>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+        <th>Order</th>
+        <th class="th-lg">task</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for task in tasks %}
+    <tr>
+        <td><a href="{{url_for('task',task_id=task.id)}}">Task {{ task.order+1 }}</a></td>
+        <td>{{ task.content }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<p1><br><br></p1>
+
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group">
+                {{ form.content.label(class="form-control-label") }}
+                {% if form.content.errors %}
+                    {{ form.content(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.content.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.content(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <div class="form-group">
+                {{ form.order.label(class="form-control-label") }}
+                {{ form.order(required=False,class="form-control form-control-lg", placeholder=task_count+1) }}
+            </div>
+        </fieldset>
+
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+<div class="content-section">
+    <form action="{{url_for('slide', task_list_id=task_list_id)}}">
+        <button> Slide Show </button>
+    </form>
+</div>
+{% endblock %}
+<!--{% block sidebar %}-->
+<!--<div class="content-section">-->
+<!--    <h3>Idea Generator</h3>-->
+
+<!--    <div class="input-group mt-6 ">-->
+<!--      <div class="input-group-prepend">-->
+<!--        <button class="btn btn-outline-secondary" type="button">add adj</button>-->
+<!--      </div>-->
+<!--      <input type="text" class="form-control" placeholder="describe traits of recipient or memories with them" aria-label="" aria-describedby="basic-addon1">-->
+<!--    </div>-->
+<!--    <div class="card my-1">-->
+<!--      <div class="card-body">-->
+<!--        Adj:-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="input-group mt-6">-->
+<!--      <div class="input-group-prepend">-->
+<!--        <button class="btn btn-outline-secondary" type="button">add noun</button>-->
+<!--      </div>-->
+<!--      <input type="text" class="form-control" placeholder="describe using nouns" aria-label="" aria-describedby="basic-addon1">-->
+<!--    </div>-->
+<!--    <div class="card my-1">-->
+<!--      <div class="card-body">-->
+<!--        Nouns-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="input-group mt-6 mb-1">-->
+<!--      <div class="input-group-prepend">-->
+<!--        <button class="btn btn-outline-secondary" type="button">add Verb</button>-->
+<!--      </div>-->
+<!--      <input type="text" class="form-control" placeholder="describe using verbs" aria-label="" aria-describedby="basic-addon1">-->
+<!--    </div>-->
+<!--    <div class="card my-1">-->
+<!--      <div class="card-body">-->
+<!--        Verbs-->
+<!--      </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--{% endblock %}-->
