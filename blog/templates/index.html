@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Basic Canvas Paint Plugin Example</title>
+		<link type="text/css" rel="stylesheet" href="resources/css/bcPaint.css"/>
+		<link type="text/css" rel="stylesheet" href="resources/css/bcPaint.mobile.css"/>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="resources/js/bcPaint.js"></script>
+		<style type="text/css">
+			*{
+			  margin: 0;
+			  padding: 0;
+			  list-style: none;
+			}
+
+			body{
+			  font-family: "proxima-nova-soft", "Proxima Nova Soft", Helvetica, Arial, sans-serif;
+			  background-color: #f9f9f9;
+			}
+
+			#container{
+			  width: 100%;
+			  height: 100%;
+			  max-width: 960px;
+			  margin: auto;
+			  background-color: #ffffff;
+			  position: relative;
+			}
+
+			#container h5{
+			  font-size: 12px;
+			  font-weight: 400;
+			  text-transform: uppercase;
+			  margin-top: 40px;
+			  margin-bottom: 10px;
+			}
+
+			#container h4{
+			  font-size: 12px;
+			  font-weight: 300;
+			}
+
+			#container h3{
+			  font-size: 16px;
+			  font-weight: 400;
+			  margin: 10px 0;
+			}
+
+			#container > #header{
+			  background-color: #313131;
+			  color: #e8e8e8;
+			  text-align: center;
+			  width: 100%;
+			  padding: 45px 0;
+			}
+
+			#container > #middle{
+			  height: 310px;
+			  padding: 40px;
+			}
+
+			#container > #middle > #features{
+			  float: left;
+			  margin-top: -20px;
+			}
+
+			#container > #middle > #features > ul > li{
+			  font-size: 12px;
+			  font-weight: 300;
+			  margin-bottom: 7px;
+			  margin-left: 5px;
+			}
+
+			#container > #middle > #features > .code{
+			  font-size: 10px;
+			  font-weight: 300;
+			  color: #5a5a5a;
+			  border: 1px dashed #ddd;
+			  padding: 7px 30px 7px 10px;
+			}
+
+			#container > #middle > #features > a{
+			  color: #000;
+			  font-size: 10px;
+			}
+
+			#container > #middle > #bcPaint{
+			  width: 600px;
+			  height: 400px;
+			  float: right;
+			}
+
+			@media (max-width: 1024px){
+				body{
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					position: fixed;
+				}
+
+				#container{
+					background-color: #f7f7f7;
+				}
+
+				#container h4{
+					font-size: 18px;
+				}
+
+				#container h3{
+					font-size: 32px;
+					margin: 15px 0;
+				}
+
+				#container > #middle > #features{
+					display: none;
+				}
+
+				#container > #middle{
+					width: 100%;
+					height: calc(100% - 270px);
+					padding: 0;
+				}
+
+				#bcPaint{
+					width: 100% !important;
+					height: 100% !important;
+					margin: 0 !important;
+					background-color: #ffffff;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<h3>Basic Canvas Paint</h3>
+				<h4>Draw, E-Sign and Export</h4>
+			</div>
+			<div class="jquery-script-ads" style="margin:30px auto" align="center"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+			<div id="middle">
+				<div id="features">
+					<h5>Features</h5>
+					<ul>
+						<li>Pick a color</li>
+						<li>Draw</li>
+						<li>E-Sign</li>
+						<li>Export</li>
+						<li>Mobile support</li>
+					</ul>
+					<h5>Code Example</h5>
+					<div class="code">
+						&lt;div id="bcPaint"&gt;&lt;/div&gt;
+						</br>
+						&ltscript type="text/javascript"&gt;
+						</br>
+							$('#bcPaint').bcPaint();
+						</br>
+						&lt;/script&gt;
+					</div>
+					<h5>Website</h5>
+					<a href="https://github.com/bobkovalex/Basic-Canvas-Paint">https://github.com/bobkovalex/Basic-Canvas-Paint</a>
+				</div>
+				<div id="bcPaint"></div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$('#bcPaint').bcPaint();
+		</script>
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>

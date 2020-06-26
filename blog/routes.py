@@ -23,6 +23,10 @@ def home():
 def about():
     return render_template('about.html')
 
+@app.route("/draw")
+def draw():
+    return render_template('example.html')
+
 @app.route('/task_lists', methods=["GET", "POST"])
 @login_required
 def task_lists():
